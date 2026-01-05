@@ -11,3 +11,6 @@ requires-python = ">=3.7"
 # This ensures the .md files are included when you pip install
 [tool.setuptools.package-data]
 "context" = ["*.md"]
+
+[tool.setuptools]
+packages = ["context"]
