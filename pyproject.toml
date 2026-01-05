@@ -1,13 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "context"
 version = "0.1.0"
+description = "My context tool"
+requires-python = ">=3.7"
 
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+[project.scripts]
+# This line creates the 'context' command in your terminal
+# It maps the command 'context' to the function 'main' inside 'context/cli.py' (or wherever your main function is)
+context = "context:main"
 
-[tool.setuptools]
-py-modules = ["context"]
-
-[tool.setuptools.package-data]
-"*" = ["*.md"]
+[tool.setuptools.packages.find]
+where = ["."]  # Scans for packages in the root
+include = ["context*"]
